@@ -34,10 +34,10 @@ router.get("/", function (req, res, next) {
 
   var config = {
     method: "post",
-    url: "https://api-sandbox.facturify.com/api/v1/factura",
+    url: "https://api.facturify.com/api/v1/factura",
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLXNhbmRib3guZmFjdHVyaWZ5LmNvbVwvYXBpXC92MVwvYXV0aCIsImlhdCI6MTYzMjUxNTMxNCwiZXhwIjoxNjMyNjAxNzE0LCJuYmYiOjE2MzI1MTUzMTQsImp0aSI6IjJlVTNha1NQZlRSRW01SVUiLCJzdWIiOjEwMDIsInBydiI6IjBhNWI5MDAwZDM0YTEzOTYxMThlNTQ4MzQyZWM0NDAxNmYwOGMzMzEifQ.w21yyHnUWdkC4vyJ5AVkQU5y_auZzUMOW2tFFQEF5u2-QHa7SiWrJJpQE5mEUCuRFmOp8i_mL_RI8BeyE_xaTw",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLmZhY3R1cmlmeS5jb21cL2FwaVwvdjFcL2F1dGgiLCJpYXQiOjE2MzI2OTUwMDUsImV4cCI6MTYzMjc4MTQwNSwibmJmIjoxNjMyNjk1MDA1LCJqdGkiOiJjRkRKRzF2aVl2d0ExTkNRIiwic3ViIjo4MzM0NCwicHJ2IjoiMGE1YjkwMDBkMzRhMTM5NjExOGU1NDgzNDJlYzQ0MDE2ZjA4YzMzMSJ9.jooxNPOshcisYmrgdBSf-I5b2CeJG-7a3XNWJNeGikYnkjzp-0u_ew84HutYgt9tD8LxPl2gOAwjN4Kn_Bc9t",
       "Content-Type": "application/json"
     },
     data: data
@@ -61,10 +61,10 @@ router.post("/", function (req, res, next) {
 
   var config = {
     method: "post",
-    url: "https://api-sandbox.facturify.com/api/v1/factura",
+    url: "https://api.facturify.com/api/v1/factura",
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLXNhbmRib3guZmFjdHVyaWZ5LmNvbVwvYXBpXC92MVwvYXV0aCIsImlhdCI6MTYzMjUxNTMxNCwiZXhwIjoxNjMyNjAxNzE0LCJuYmYiOjE2MzI1MTUzMTQsImp0aSI6IjJlVTNha1NQZlRSRW01SVUiLCJzdWIiOjEwMDIsInBydiI6IjBhNWI5MDAwZDM0YTEzOTYxMThlNTQ4MzQyZWM0NDAxNmYwOGMzMzEifQ.w21yyHnUWdkC4vyJ5AVkQU5y_auZzUMOW2tFFQEF5u2-QHa7SiWrJJpQE5mEUCuRFmOp8i_mL_RI8BeyE_xaTw",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLmZhY3R1cmlmeS5jb21cL2FwaVwvdjFcL2F1dGgiLCJpYXQiOjE2MzI2OTUwMDUsImV4cCI6MTYzMjc4MTQwNSwibmJmIjoxNjMyNjk1MDA1LCJqdGkiOiJjRkRKRzF2aVl2d0ExTkNRIiwic3ViIjo4MzM0NCwicHJ2IjoiMGE1YjkwMDBkMzRhMTM5NjExOGU1NDgzNDJlYzQ0MDE2ZjA4YzMzMSJ9.jooxNPOshcisYmrgdBSf-I5b2CeJG-7a3XNWJNeGikYnkjzp-0u_ew84HutYgt9tD8LxPl2gOAwjN4Kn_Bc9t",
       "Content-Type": "application/json"
     },
     data: data
@@ -73,7 +73,6 @@ router.post("/", function (req, res, next) {
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
-      resp = response;
     })
     .catch(function (error) {
       console.log(error);
