@@ -1,5 +1,5 @@
 {
-  "name": "facturify-api-connector",
+  "name": "fact-api-connector",
   "version": "0.0.0",
   "private": true,
   "scripts": {
