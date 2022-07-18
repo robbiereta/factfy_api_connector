@@ -5,8 +5,13 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var factRouter = require("./routes/factConnector");
 var cors = require("cors");
+const colors = require('colors')
+const dotenv = require('dotenv').config()
+const { errorHandler } = require('./middleware/errorMiddleware')
+const connectDB = require('./config/db')
+connectDB()
 var app = express();
 
 // view engine setup
@@ -21,7 +26,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/facturaglobal", usersRouter);
+app.use("/api/facturas", factRouter);
+app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/ventas', require('./routes/ventasRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/clientes', require('./routes/clientesRoutes'))
+
+app.use(errorHandler)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
